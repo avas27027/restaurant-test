@@ -1,0 +1,5 @@
+2022/09/15-10:34:29.983 3 Creating DB /home/alvaro/Documentos/Web/restaurant-test/.config/google-chrome/Default/Local Storage/leveldb since it was missing.
+2022/09/15-10:34:30.349 3 Reusing MANIFEST /home/alvaro/Documentos/Web/restaurant-test/.config/google-chrome/Default/Local Storage/leveldb/MANIFEST-000001
+2022/09/15-11:40:15.333 26 Level-0 table #5: started
+2022/09/15-11:40:15.370 26 Level-0 table #5: 53323 bytes OK
+2022/09/15-11:40:15.442 26 Delete type=0 #3

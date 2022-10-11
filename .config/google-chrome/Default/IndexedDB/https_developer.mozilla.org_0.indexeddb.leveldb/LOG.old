@@ -1,0 +1,7 @@
+2022/09/15-11:39:55.266 3d48 Reusing MANIFEST /home/alvaro/Documentos/Web/restaurant-test/.config/google-chrome/Default/IndexedDB/https_developer.mozilla.org_0.indexeddb.leveldb/MANIFEST-000001
+2022/09/15-11:39:55.266 3d48 Recovering log #3
+2022/09/15-11:39:55.267 3d48 Reusing old log /home/alvaro/Documentos/Web/restaurant-test/.config/google-chrome/Default/IndexedDB/https_developer.mozilla.org_0.indexeddb.leveldb/000003.log 
+2022/09/15-11:40:09.296 76e4 Level-0 table #5: started
+2022/09/15-11:40:09.328 76e4 Level-0 table #5: 21557 bytes OK
+2022/09/15-11:40:09.367 76e4 Delete type=0 #3
+2022/09/15-11:40:09.367 76e4 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

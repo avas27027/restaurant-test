@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+input {
+    -webkit-transition: 1s;
+    /* Safari */
+    transition: 1s;
+}
+
+$type: "text", "email", "password";
+
+@each $t in $type {
+    input[type=#{$t}]:hover {
+        box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+    }
+
+    input[type=#{$t}]:focus {
+        border-color: #D3D3D3;
+        box-shadow: 0 0 5pt 2pt #D3D3D3;
+        outline-width: 0px;
+    }
+
+}
+
+/*
+input[type=checkbox]:checked{
+    transition: all .2s;
+    background-color: #D3D3D3;
+    box-shadow: 0 0 5pt 1pt #D3D3D3;
+    border-color: #D3D3D3;
+}
+
+
+input[type=checkbox]:focus {
+    transition: all .2s;
+    //background-color: #D3D3D3;
+    //box-shadow: 0 0 5pt 1pt #D3D3D3;
+    border-color: #D3D3D3;
+}*/
+
+input[type="checkbox"]{
+    background: #f1f5f9;
+    transition: all 250ms;
+    border: 1px solid #94a3b8;
+    border-radius: 0.2rem;
+}
+
+input[type="checkbox"]{
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transition: all 250ms;
+}
+
+input[type="checkbox"]:not([disabled]),
+input[type="checkbox"]:focus{
+    background: #e2e8f0;
+    border-color: #64748b;
+}
+input[type="checkbox"]:checked:focus{
+  background: #2563eb;
+  border-color: #1e40af;
+}

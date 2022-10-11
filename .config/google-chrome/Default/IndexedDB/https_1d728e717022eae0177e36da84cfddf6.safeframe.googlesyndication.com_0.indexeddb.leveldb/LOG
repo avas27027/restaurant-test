@@ -1,0 +1,6 @@
+2022/09/16-16:51:50.779 8282 Creating DB /home/alvaro/Documents/Web/restaurant-test/.config/google-chrome/Default/IndexedDB/https_1d728e717022eae0177e36da84cfddf6.safeframe.googlesyndication.com_0.indexeddb.leveldb since it was missing.
+2022/09/16-16:51:50.855 8282 Reusing MANIFEST /home/alvaro/Documents/Web/restaurant-test/.config/google-chrome/Default/IndexedDB/https_1d728e717022eae0177e36da84cfddf6.safeframe.googlesyndication.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/09/16-16:51:53.616 82a6 Level-0 table #5: started
+2022/09/16-16:51:53.646 82a6 Level-0 table #5: 480 bytes OK
+2022/09/16-16:51:53.691 82a6 Delete type=0 #3
+2022/09/16-16:51:53.691 82a6 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
