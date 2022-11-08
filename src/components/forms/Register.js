@@ -36,41 +36,41 @@ function Register() {
   return (
     <div className='p-1'>
       <h4>Registro</h4>
-      <form noValidate class={validated} onSubmit={handleSubmit}>
-        <div class="input-group-sm col-12">
-          <label for="validationCustom001" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="validationCustom001" placeholder="Nombre" required />
-          <div class="invalid-feedback">
+      <form noValidate className={validated} onSubmit={handleSubmit}>
+        <div className="input-group-sm col-12">
+          <label for="validationCustom001" className="form-label">Nombre</label>
+          <input type="text" className="form-control" id="validationCustom001" placeholder="Nombre" required />
+          <div className="invalid-feedback">
             Ingrese Nombre
           </div>
         </div>
-        <div class="input-group-sm col-12">
-          <label for="validationCustom01" class="form-label">Correo</label>
-          <input type="email" class="form-control" id="validationCustom01" placeholder="Correo" required />
-          <div class="invalid-feedback">
+        <div className="input-group-sm col-12">
+          <label for="validationCustom01" className="form-label">Correo</label>
+          <input type="email" className="form-control" id="validationCustom01" placeholder="Correo" required />
+          <div className="invalid-feedback">
             Ingrese Correo
           </div>
         </div>
-        <div class="input-group-sm col-12">
-          <label for="validationCustom02" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="validationCustom02" placeholder="Contraseña" required />
-          <div class="invalid-feedback">
+        <div className="input-group-sm col-12">
+          <label for="validationCustom02" className="form-label">Contraseña</label>
+          <input type="password" className="form-control" id="validationCustom02" placeholder="Contraseña" required />
+          <div className="invalid-feedback">
             Ingrese Contraseña
           </div>
         </div>
-        <div class="input-group-sm col-12 p-1">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
-            <label class="form-check-label" for="invalidCheck">
+        <div className="input-group-sm col-12 p-1">
+          <div className="form-check">
+            <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+            <label className="form-check-label" for="invalidCheck">
               Agree to terms and conditions
             </label>
-            <div class="invalid-feedback">
+            <div className="invalid-feedback">
               You must agree before submitting.
             </div>
           </div>
         </div>
-        <div class="input-group-md col-12">
-          <button class="login_Register button btn btn-primary" type="submit">Registrarse</button>
+        <div className="input-group-md col-12">
+          <button className="" type="submit">Registrarse</button>
         </div>
       </form>
     </div>

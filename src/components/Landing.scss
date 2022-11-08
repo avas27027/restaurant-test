@@ -1,0 +1,16 @@
+@import '../scss/abstracts/variables.scss';
+.landing {
+    &.background{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        background-size: 35%;
+    }
+
+
+    &.navContainer{
+        background-color: $primary_color;
+    }
+}
+

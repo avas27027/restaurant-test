@@ -1,3 +1,5 @@
+@import '../abstracts/variables.scss';
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -27,52 +29,43 @@ $type: "text", "email", "password";
 
 @each $t in $type {
     input[type=#{$t}]:hover {
-        box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+        box-shadow: 0 0 5pt 0.5pt $primary_color;
     }
 
     input[type=#{$t}]:focus {
-        border-color: #D3D3D3;
-        box-shadow: 0 0 5pt 2pt #D3D3D3;
+        border-color: $primary_color;
+        box-shadow: 0 0 5pt 2pt $primary_color;
         outline-width: 0px;
     }
 
 }
-
-/*
-input[type=checkbox]:checked{
-    transition: all .2s;
-    background-color: #D3D3D3;
-    box-shadow: 0 0 5pt 1pt #D3D3D3;
-    border-color: #D3D3D3;
-}
-
-
-input[type=checkbox]:focus {
-    transition: all .2s;
-    //background-color: #D3D3D3;
-    //box-shadow: 0 0 5pt 1pt #D3D3D3;
-    border-color: #D3D3D3;
-}*/
-
 input[type="checkbox"]{
-    background: #f1f5f9;
-    transition: all 250ms;
-    border: 1px solid #94a3b8;
-    border-radius: 0.2rem;
+    //background: $primary_color;
+    transition: all 500ms;
+    border: 1px solid $primary_color;
+    &:focus{
+        box-shadow: 0 0 1pt 3pt $secondary_color;
+        border: 1px solid $primary_color;
+    }
+}
+input[type="checkbox"]:checked{
+    background: $primary_color;
+    border: 1px solid $primary_color;
 }
 
-input[type="checkbox"]{
-    border: solid #ffffff;
-    border-width: 0 2px 2px 0;
-    transition: all 250ms;
+button{
+    background-color: $primary_color;
+    border-radius: 8px;
+    padding: 7px 10px;
+    color: white;
+    &:hover{
+        filter: brightness(90%);
+    }
+    &:active{
+        filter: brightness(85%);
+    }
 }
 
-input[type="checkbox"]:not([disabled]),
-input[type="checkbox"]:focus{
-    background: #e2e8f0;
-    border-color: #64748b;
-}
-input[type="checkbox"]:checked:focus{
-  background: #2563eb;
-  border-color: #1e40af;
+a[aria-current]{
+    color: red;
 }
