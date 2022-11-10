@@ -13,10 +13,22 @@ li {
 a {
     text-decoration: none;
 }
+a[aria-current]{
+    color: red;
+}
 
 button {
     border: none;
-    background: none;
+    background-color: $fourth_color;
+    border-radius: 8px;
+    padding: 7px 10px;
+    color: white;
+    &:hover{
+        filter: brightness(90%);
+    }
+    &:active{
+        filter: brightness(85%);
+    }
 }
 
 input {
@@ -29,12 +41,12 @@ $type: "text", "email", "password";
 
 @each $t in $type {
     input[type=#{$t}]:hover {
-        box-shadow: 0 0 5pt 0.5pt $primary_color;
+        box-shadow: 0 0 5pt 0.5pt $fourth_color;
     }
 
     input[type=#{$t}]:focus {
-        border-color: $primary_color;
-        box-shadow: 0 0 5pt 2pt $primary_color;
+        border-color: $fourth_color;
+        box-shadow: 0 0 5pt 2pt $fourth_color;
         outline-width: 0px;
     }
 
@@ -42,30 +54,18 @@ $type: "text", "email", "password";
 input[type="checkbox"]{
     //background: $primary_color;
     transition: all 500ms;
-    border: 1px solid $primary_color;
+    border: 1px solid $fourth_color;
     &:focus{
-        box-shadow: 0 0 1pt 3pt $secondary_color;
-        border: 1px solid $primary_color;
+        box-shadow: 0 0 1pt 3pt $third_color;
+        border: 1px solid $fourth_color;
     }
 }
 input[type="checkbox"]:checked{
-    background: $primary_color;
-    border: 1px solid $primary_color;
+    background: $fourth_color;
+    border: 1px solid $fourth_color;
 }
 
-button{
-    background-color: $primary_color;
-    border-radius: 8px;
-    padding: 7px 10px;
-    color: white;
-    &:hover{
-        filter: brightness(90%);
-    }
-    &:active{
-        filter: brightness(85%);
-    }
-}
 
-a[aria-current]{
-    color: red;
+h1,h2,h3,h4{
+    color: $fourth_color;
 }

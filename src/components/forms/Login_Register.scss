@@ -1,9 +1,10 @@
+@import '../../scss/abstracts/variables.scss';
 .login_Register {
 
 
     &.background {
-        background: rgb(2, 0, 36);
-        background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(2, 2, 19, 1) 14%, rgba(4, 109, 130, 1) 92%);
+        background: $fondo;
+        background: linear-gradient(0deg,lighten($fondo,5%) 5%,  $fondo 92%);
         display: flex;
         align-items: center;
         justify-content: center;

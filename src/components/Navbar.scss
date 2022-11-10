@@ -1,0 +1,27 @@
+@import '../scss/abstracts/variables.scss';
+
+.navbar {
+    &.navContainer{
+        background-color: transparentize($fondo,0.70);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        
+        
+    }
+    &-title{
+        color: $third_color;
+    }
+    &-a{
+        color:$third_color;
+        transition: 0.1s;
+        border-radius: 20%;
+        &:hover{
+            margin: 0 20px;
+            transform: scale(180%);
+            background-color: rgba(46, 45, 45, 0.8);
+            color: $third_color;
+        }
+    }
+}
