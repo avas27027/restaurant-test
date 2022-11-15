@@ -3,7 +3,24 @@ import React from 'react'
 export default function Navbar() {
     return (
         <div>
-            <nav className="Navbar navContainer navbar navbar-expand-md ">
+            <nav className='navbarm navContainer'>
+                <a className='navbarm title' href='/'>Jumbo</a>
+                <div className='navbarm link-group'>
+                    <div className='navbarm link-box'>
+                        <a href='/'>Carta</a>
+                    </div>
+                    <div className='navbarm link-box'>
+                        <a href='/'>Reservas</a>
+                    </div>
+                    <div className='navbarm link-box'>
+                        <a href='/'>Pedidos</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    )
+
+    /*<nav className="Navbar navContainer navbar navbar-expand-md ">
                 <div className='container-fluid'>
                     <a className="navbar-title navbar-brand" href="/">Jumbo</a>
 
@@ -26,7 +43,5 @@ export default function Navbar() {
                         </ul>
                     </div>
                 </div>
-            </nav>
-        </div>
-    )
+            </nav> */
 }

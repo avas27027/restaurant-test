@@ -1,4 +1,4 @@
-@import '../abstracts/variables.scss';
+@import "../abstracts/variables.scss";
 
 * {
     box-sizing: border-box;
@@ -12,8 +12,11 @@ li {
 
 a {
     text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
 }
-a[aria-current]{
+a[aria-current] {
     color: red;
 }
 
@@ -23,10 +26,10 @@ button {
     border-radius: 8px;
     padding: 7px 10px;
     color: white;
-    &:hover{
+    &:hover {
         filter: brightness(90%);
     }
-    &:active{
+    &:active {
         filter: brightness(85%);
     }
 }
@@ -40,32 +43,33 @@ input {
 $type: "text", "email", "password";
 
 @each $t in $type {
-    input[type=#{$t}]:hover {
+    input[type="#{$t}"]:hover {
         box-shadow: 0 0 5pt 0.5pt $fourth_color;
     }
 
-    input[type=#{$t}]:focus {
+    input[type="#{$t}"]:focus {
         border-color: $fourth_color;
         box-shadow: 0 0 5pt 2pt $fourth_color;
         outline-width: 0px;
     }
-
 }
-input[type="checkbox"]{
+input[type="checkbox"] {
     //background: $primary_color;
     transition: all 500ms;
     border: 1px solid $fourth_color;
-    &:focus{
+    &:focus {
         box-shadow: 0 0 1pt 3pt $third_color;
         border: 1px solid $fourth_color;
     }
 }
-input[type="checkbox"]:checked{
+input[type="checkbox"]:checked {
     background: $fourth_color;
     border: 1px solid $fourth_color;
 }
 
-
-h1,h2,h3,h4{
+h1,
+h2,
+h3,
+h4 {
     color: $fourth_color;
 }
