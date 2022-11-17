@@ -10,7 +10,7 @@ export default function Landing() {
 
     <div >
       <Navbar />
-      <Carousel imgs={imgs} />
+      <Carousel imgs={imgs}/>
 
     </div>
   )

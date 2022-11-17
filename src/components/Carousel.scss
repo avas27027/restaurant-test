@@ -3,36 +3,37 @@
 .carouselm {
     &.box {
         height: 100vh;
+        width: 100vw;
     }
     &.slide {
+        display: inline-block;
+        overflow: hidden;
         position: absolute;
         inset: 0;
-        opacity: 0;
-        transition: 2s;
-
-        &[data-active="true"] {
-            opacity: 1;
-        }
     }
     &.img {
-        display: block;
+        //display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
+        transition: 2s;
+        opacity: 0;
+        &[data-active=true] {
+            opacity: 1;
+            
+        }
+        &[data-active=false] {
+            transform: translateX(20vw);
+        }
     }
     &-button {
         position: absolute;
         border-radius: 0;
-        top: 10vh;
-        padding: 43vh 5%;
+        top: 50%;
+        /*padding: 43vh 5%;*/
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0.4);
-        //background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.1) 100%);
-        /*
-        &.prev{
-            left:1%;
-        }*/
         &.next {
             right: 0%;
         }

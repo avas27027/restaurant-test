@@ -1,4 +1,5 @@
 import React from 'react'
+import { AiOutlineMenu } from "react-icons/ai";
 
 export default function Navbar() {
     return (
@@ -7,15 +8,22 @@ export default function Navbar() {
                 <a className='navbarm title' href='/'>Jumbo</a>
                 <div className='navbarm link-group'>
                     <div className='navbarm link-box'>
-                        <a href='/'>Carta</a>
+                        <div className='navbarm link-box hov'>
+                            <a href='/'>Carta</a>
+                        </div>
                     </div>
                     <div className='navbarm link-box'>
-                        <a href='/'>Reservas</a>
+                        <div className='navbarm link-box hov'>
+                            <a href='/'>Reservas</a>
+                        </div>
                     </div>
                     <div className='navbarm link-box'>
-                        <a href='/'>Pedidos</a>
+                        <div className='navbarm link-box hov'>
+                            <a href='/'>Pedidos</a>
+                        </div>
                     </div>
                 </div>
+                <button className='navbarm menu'><AiOutlineMenu/></button>
             </nav>
         </div>
     )

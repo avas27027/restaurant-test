@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import Login_Register from "./components/forms/Login_Register.js";
+import LoginRegister from "./components/forms/LoginRegister.js";
 import Landing from './components/Landing';
 
 import reportWebVitals from './reportWebVitals';
@@ -16,7 +16,7 @@ import {
 
 const router =  createBrowserRouter([
   {path:"/", element:<Landing/>},
-  {path:"/login", element:<Login_Register/>}
+  {path:"/login", element:<LoginRegister/>}
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

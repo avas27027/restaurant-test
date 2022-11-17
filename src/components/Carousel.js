@@ -1,4 +1,5 @@
-import React, {useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { AiFillCaretRight, AiFillCaretLeft } from "react-icons/ai";
 
 export default function Carousel(props) {
     const imgSrc = props.imgs
@@ -32,19 +33,19 @@ export default function Carousel(props) {
         return () => {
             clearInterval(intervalo)
         }
-    }, [active, index,imgSrc])
+    }, [active, index, imgSrc])
 
     return (
         <div className='carouselm box'>
-            <div className='carouselm slide' data-active={active}>
-                <img className='carouselm img' src={img1} alt='Slide 1' />
+            <div className='carouselm slide' >
+                <img data-active={active} className='carouselm img' src={img1} alt='Slide 1' />
             </div>
-            <div className='carouselm slide' data-active={!active}>
-                <img className='carouselm img' src={img2} alt='Slide 1' />
+            <div className='carouselm slide' >
+                <img data-active={!active} className='carouselm img' src={img2} alt='Slide 1' />
             </div>
 
-            <button onClick={CarouselButtonNext} className='carouselm-button next'>{'>'}</button>
-            <button onClick={CarouselButtonPrev} className='carouselm-button prev'>{'<'}</button>
+            <button onClick={CarouselButtonNext} className='carouselm-button next'><AiFillCaretRight /></button>
+            <button onClick={CarouselButtonPrev} className='carouselm-button prev'><AiFillCaretLeft /></button>
 
         </div>
     )

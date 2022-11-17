@@ -16,27 +16,52 @@
         color: $third_color;
         font-size: 1.5rem;
     }
+    &.menu{
+        background-color: transparent;
+        position: absolute;
+        top: -100px;
+        @media screen and (max-width: $small){
+            position: initial;
+            
+        }
+    }
     &.link {
         &-group {
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
             width: 100%;
             height: 100%;
+            @media screen and (max-width: $small){
+                flex-direction: column;
+                position: absolute;
+                top: 50vh;
+                background-color: black;
+                height: 20vh;
+            }
         }
-        &-box{
+        &-box {
+            height: 100%;
             display: flex;
             transition: 0.5s;
             align-items: center;
+            justify-content: center;
+            &.hov {
+                width: 100%;
+                height: 150%;
+                &:hover{
+                    background-color: black;
+                    border-bottom: 1px solid white;
+                }
+            }
             & > a {
-                
                 margin: 0 10px;
                 color: white;
-            }
-            &:hover{
-                transform: translateY(20px);
-                background-color: black;
+                transition: 0.5s;
+                padding: 50% 0;
+                &:hover {
+                    transform: translateY(20px);
+                }
             }
         }
-        
     }
 }
