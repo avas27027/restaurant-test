@@ -10,19 +10,22 @@
         top: 0;
         width: 100vw;
         height: 10vh;
-        z-index: 1;
+        z-index: 100;
+        justify-content: space-between;
+        
     }
     &.title {
         color: $third_color;
         font-size: 1.5rem;
+        margin-left: 10px;
     }
-    &.menu{
+    &.menu {
         background-color: transparent;
         position: absolute;
+        font-size: 1.5em;
         top: -100px;
-        @media screen and (max-width: $small){
+        @media screen and (max-width: $small) {
             position: initial;
-            
         }
     }
     &.link {
@@ -31,12 +34,18 @@
             justify-content: flex-end;
             width: 100%;
             height: 100%;
-            @media screen and (max-width: $small){
+            transition: 1s;
+            @media screen and (max-width: $small) {
                 flex-direction: column;
+                opacity: 0;
                 position: absolute;
-                top: 50vh;
-                background-color: black;
-                height: 20vh;
+                top: -100vh;
+                background-color: rgba(0, 0, 0, 0.63);
+                height: 90vh;
+                &[data-active=true]{
+                    transform: translateY(110vh);
+                    opacity: 1;
+                }
             }
         }
         &-box {
@@ -45,12 +54,20 @@
             transition: 0.5s;
             align-items: center;
             justify-content: center;
+            @media screen and (max-width: $small) {
+                border: 1px solid white;
+                border-right: 0;
+                border-left: 0;
+            }
             &.hov {
-                width: 100%;
-                height: 150%;
-                &:hover{
-                    background-color: black;
-                    border-bottom: 1px solid white;
+                border: 0;
+                @media screen and (min-width: $small) {
+                    width: 100%;
+                    height: 150%;
+                    &:hover {
+                        background-color: black;
+                        border-bottom: 1px solid white;
+                    }
                 }
             }
             & > a {
@@ -58,8 +75,13 @@
                 color: white;
                 transition: 0.5s;
                 padding: 50% 0;
-                &:hover {
-                    transform: translateY(20px);
+                @media screen and (min-width: $small) {
+                    &:hover {
+                        transform: translateY(20px);
+                    }
+                }
+                @media screen and (max-width: $small) {
+                    font-size: 1.5em;
                 }
             }
         }

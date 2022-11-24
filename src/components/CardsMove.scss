@@ -1,21 +1,20 @@
 @import "../scss/abstracts/variables.scss";
-
 @keyframes fInAnimate {
     0% {
-        right: 50vw;
+        transform: translateX(-10vw);
         opacity: 0;
     }
     100% {
-        right: 0;
+        transform: translateX(0);
         opacity: 1;
     }
 }
 @keyframes fOutAnimate {
     0% {
-        right: 0vw;
+        transform: translateX(0vw);
     }
     100% {
-        right: -100vw;
+        transform: translateX(100vw);
     }
 }
 @keyframes rInAnimate {
@@ -36,25 +35,34 @@
         left: -100vw;
     }
 }
-.carouselm {
-    &.box {
-        height: 100%;
+.cardsMove {
+    &.bkg{
+        
         width: 100%;
+        height: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
     }
-    &.slide {
-        display: inline-block;
+    &.move{
+        height: 100%;
+        width: 70%;
         overflow: hidden;
-        position: absolute;
-        inset: 0;
+        position: relative;
+        top: 0;
+        //z-index: 3;
+        margin: auto auto;
     }
-    &.img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        transition: 1s;
-        //opacity: 0;
+    &.group{
         position: absolute;
+        //margin: auto auto;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
         &.forward {
             &[data-active="true"] {
                 //opacity: 1;
@@ -75,16 +83,24 @@
             }
         }
     }
-    &-button {
-        position: absolute;
-        border-radius: 0;
-        top: 50%;
-        /*padding: 43vh 5%;*/
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.4);
+    &.card{
+        height: 100%;
+        width: 100%;
+        
+        background-color: red;
+    }
+    &.button{
         z-index: 2;
-        &.next {
-            right: 0%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: relative;
+        
+        &.prev{
+            margin-left: 2%;
         }
+        &.next{
+            margin-right: 2%;
+        }
+        
     }
 }

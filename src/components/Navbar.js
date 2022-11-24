@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineMenu } from "react-icons/ai";
 
 export default function Navbar() {
+    const [pivot, setPivot] = useState(false)
     return (
         <div>
             <nav className='navbarm navContainer'>
                 <a className='navbarm title' href='/'>Jumbo</a>
-                <div className='navbarm link-group'>
+                <div className='navbarm link-group' data-active={pivot}>
                     <div className='navbarm link-box'>
                         <div className='navbarm link-box hov'>
                             <a href='/'>Carta</a>
@@ -23,7 +24,7 @@ export default function Navbar() {
                         </div>
                     </div>
                 </div>
-                <button className='navbarm menu'><AiOutlineMenu/></button>
+                <button onClick={()=>{setPivot(!pivot)}} className='navbarm menu'><AiOutlineMenu/></button>
             </nav>
         </div>
     )
