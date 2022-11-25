@@ -5,8 +5,11 @@
         height: 80%;
         width: 30%;
         background-color: red;
-        border-radius: 10%;
+        border-radius: 20%;
         text-align: center;
         font-size: 2rem;
+        &[data-active=false]{
+            visibility: hidden;
+        }
     }
 }

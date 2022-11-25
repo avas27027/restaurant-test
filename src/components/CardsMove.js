@@ -2,27 +2,22 @@ import React, { useState } from 'react'
 import { AiFillCaretRight, AiFillCaretLeft } from "react-icons/ai";
 import Card from './Card';
 export default function CardsMove(props) {
-    
+    const base = { id: 0 }
     const initArr = () => {
-        var p = 0
-        const nums = props.cardsArr.map((e) => {
-            var a = []
-            if (p < 3) {
-                a.push(e)
-                p++
+        const arr = []
+        for (let i = 0; i < props.cardsArr.length; i += 3) {
+            const a = props.cardsArr.slice(i, i + 3)
+            const d = 3 - a.length
+            for (let i = 0; i < d; i++) {
+                a.push(base)
             }
-            else{
-                
-                return a
-            }
-        })
-        if (nums.length < 6) {
-            for (let i = 0; i < nums.length - 6; i++) { nums.push(0) }
+            arr.push(a)
         }
-        return nums
+        return arr
     }
     const iArr = initArr()
-    const [num, setNum] = useState(initArr())
+    const [obj1, setObj1] = useState(iArr[0])
+    const [obj2, setObj2] = useState(iArr[1])
     const [index, setIndex] = useState(0)
     const [active, setActive] = useState(true)
     const [direction, setDirection] = useState('forward')
@@ -31,29 +26,37 @@ export default function CardsMove(props) {
         setActive(!active)
         const pivot = (index + 1) === iArr.length ? 0 : index + 1
         index === iArr.length - 1 ? setIndex(0) : setIndex(index + 1)
-        //setImg1(iArr[active ? index : pivot])
-        //setImg2(iArr[!active ? index : pivot])
+        setObj1(iArr[active ? index : pivot])
+        setObj2(iArr[!active ? index : pivot])
         setDirection('forward')
+    }
+    const CardsMoveButtonPrev = () => {
+        setActive(!active)
+        const pivot = (index - 1) === -1 ? iArr.length - 1 : index - 1
+        index === 0 ? setIndex(iArr.length - 1) : setIndex(index - 1)
+        setObj1(iArr[active ? index : pivot])
+        setObj2(iArr[!active ? index : pivot])
+        setDirection('reverse')
     }
 
     return (
         <div className='cardsMove bkg'>
-            <button className='cardsMove button prev'><AiFillCaretLeft /></button>
+            <button onClick={CardsMoveButtonPrev} className='cardsMove button prev'><AiFillCaretLeft /></button>
 
-            <div className='cardsMove move'>
-                <div data-active={active} className='cardsMove group forward'>
-                    <Card number={num[0]} />
-                    <Card number={num[1]} />
-                    <Card number={num[2]} />
+            <div className='cardsMove move' onScrollCapture={() =>{console.log('scroll')}}>
+                <div data-active={active} className={'cardsMove group ' + direction}>
+                    <Card data={obj1[0]} />
+                    <Card data={obj1[1]} />
+                    <Card data={obj1[2]} />
                 </div>
-                <div data-active={!active} className='cardsMove group forward'>
-                    <Card number={num[3]} />
-                    <Card number={num[4]} />
-                    <Card number={num[5]} />
+                <div data-active={!active} className={'cardsMove group ' + direction}>
+                    <Card data={obj2[0]} />
+                    <Card data={obj2[1]} />
+                    <Card data={obj2[2]} />
                 </div>
 
             </div>
-            <button className='cardsMove button next'><AiFillCaretRight /></button>
+            <button onClick={CardsMoveButtonNext} className='cardsMove button next'><AiFillCaretRight /></button>
 
         </div>
     )
