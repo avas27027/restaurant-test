@@ -1,9 +1,7 @@
 @import '../scss/abstracts/variables.scss';
 .landing {
     &.background{
-        position: absolute;
-        width: 100%;
-        height: 100%;
+        //position: absolute;
         background: $fondo;
         background: linear-gradient(0deg,lighten($fondo,1%) 30%,  $fondo 90%);
         //display: flex;

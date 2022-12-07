@@ -1,0 +1,39 @@
+@import "../../scss/abstracts/variables.scss";
+
+.movableCards {
+    width: 100vw;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    .butt{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 40%;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.4);
+        &.prev{
+            left: 1%;
+        }
+        &.next{
+            right: 1%;
+        }
+    }
+    &.box {
+        height: 110%;
+        display: flex;
+        flex-flow: row nowrap;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        &-slide{
+            padding: 0 10%;
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            scroll-snap-align: center;
+            height: 100%;
+        }
+    }
+}

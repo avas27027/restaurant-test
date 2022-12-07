@@ -1,6 +1,8 @@
 import React from 'react'
-import CardsMove from './CardsMove'
-import Carousel from './Carousel'
+//import CardsMove from './CardsMove'
+//import Carousel from './Carousel'
+import Carousel2 from './Carousel/Carousel2'
+import MovableCards from './MovableCards/MovableCards'
 import Navbar from './Navbar'
 
 export default function Landing() {
@@ -14,8 +16,9 @@ export default function Landing() {
   return (
     <div className='landing background'>
       <Navbar />
-      <Carousel imgs={imgs} />
-      <CardsMove cardsArr={arr} />
+      <Carousel2 imgs={imgs} />
+      <MovableCards cardsArr={arr} time={0} />
+      
     </div>
   )
 }

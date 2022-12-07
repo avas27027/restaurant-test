@@ -1,0 +1,19 @@
+@import "../../scss/abstracts/variables.scss";
+
+.cardM{
+    &.bkg{
+        height: 80%;
+        width: 30%;
+        background-color: red;
+        border-radius: 20%;
+        text-align: center;
+        font-size: 2rem;
+        @media screen and (max-width: $small) {
+            height: 50%;
+            width: 31%;
+        }
+        &[data-active=false]{
+            visibility: hidden;
+        }
+    }
+}
