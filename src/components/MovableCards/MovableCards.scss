@@ -2,21 +2,25 @@
 
 .movableCards {
     width: 100vw;
-    height: 200px;
+    height: 70vh;
     position: relative;
     overflow: hidden;
     .butt{
         position: absolute;
         width: 50px;
-        height: 50px;
-        top: 40%;
+        height: 100%;
+        top: 0%;
         z-index: 2;
         background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 0;
         &.prev{
-            left: 1%;
+            left: 0%;
         }
         &.next{
-            right: 1%;
+            right: 0%;
+        }
+        @media screen and (max-width: $small) {
+            display: none;
         }
     }
     &.box {
@@ -27,13 +31,18 @@
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         &-slide{
-            padding: 0 10%;
+            padding: 0 8%;
             flex: none;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            scroll-snap-align: center;
+            scroll-snap-align: start;
             height: 100%;
+            @media screen and (max-width: $small) {
+                width: 200%;
+                //scroll-snap-align: center;
+                padding: 0 10%;
+            }
         }
     }
 }
