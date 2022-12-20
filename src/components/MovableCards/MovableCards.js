@@ -15,7 +15,7 @@ export default function MovableCards(props) {
         }
         return arr
     }
-    const cards = initArr(props.cardsArr)
+    const cards = props.cardsArr
     const [active, setActive] = useState(false)
     const [current, setCurrent] = useState(0)
 
@@ -48,9 +48,7 @@ export default function MovableCards(props) {
                 className='movableCards box'>
                 {cards.map((obj, index) =>
                     <div key={'s' + index} className='movableCards box-slide'>
-                        <CardM data={obj[0]} />
-                        <CardM data={obj[1]} />
-                        <CardM data={obj[2]} />
+                        <CardM data={obj} />
                     </div>
                 )}
             </div>
