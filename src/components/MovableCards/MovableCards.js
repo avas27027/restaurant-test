@@ -3,20 +3,7 @@ import CardM from '../Cards/CardM'
 import { AiFillCaretRight, AiFillCaretLeft } from "react-icons/ai";
 
 export default function MovableCards(props) {
-    const base = { id: 0 }
-    const initArr = (rawArr) => {
-        const arr = []
-        for (let i = 0; i < rawArr.length; i += 3) {
-            const a = rawArr.slice(i, i + 3)
-            for (let i = 0; i < (3 - a.length); i++) {
-                a.push(base)
-            }
-            arr.push(a)
-        }
-        return arr
-    }
     const cards = props.cardsArr
-    const [active, setActive] = useState(false)
     const [current, setCurrent] = useState(0)
 
     useEffect(() => {
@@ -29,25 +16,20 @@ export default function MovableCards(props) {
     }, [props.time])
 
     useEffect(() => {
+        
+        
+        if (current >= cards.length-1) setCurrent(0)
+        if (current === -1) setCurrent(cards.length-3)
+        const slide = document.querySelector('#s'+current)
         const box = document.querySelector('#mcBox')
-        if (current === cards.length) setCurrent(0)
-        if (current === -1) setCurrent(cards.length - 1)
-        box.scrollLeft = current * box.offsetWidth
-        setActive(false)
+        console.log(cards.length-cards.length%3-1, current * slide.offsetWidth +10)
+        box.scrollLeft = (current * slide.offsetWidth)
     }, [current, cards.length])
-    const moveCapHandler = (e) => {
-        if (e.currentTarget.scrollLeft % e.currentTarget.offsetWidth === 0 && active) {
-            setCurrent(e.currentTarget.scrollLeft / e.currentTarget.offsetWidth)
-            setActive(false)
-        }
-    }
     return (
         <div className='movableCards'>
-            <div id='mcBox' onScroll={(e) => moveCapHandler(e)}
-                onTouchEnd={() => setActive(true)}
-                className='movableCards box'>
+            <div id='mcBox' className='movableCards box'>
                 {cards.map((obj, index) =>
-                    <div key={'s' + index} className='movableCards box-slide'>
+                    <div id={'s'+index} key={'s' + index} className='movableCards box-slide'>
                         <CardM data={obj} />
                     </div>
                 )}
